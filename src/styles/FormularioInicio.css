@@ -1,0 +1,61 @@
+.busqueda-contenedor-barra {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.busqueda-barra {
+    width: 100%;
+    height: 42px;
+    background-color: #e7f5db;
+}
+
+form {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.barra-input {
+    width: 200px;
+    border: none;
+    font-size: 0.4em;
+    background-color: #e7f5db;
+    border-right: 2px #b5c2a9 solid;
+    outline: none;
+    color: #003b4e;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+}
+
+.barra-input-escribir {
+    width: 300px;
+}
+
+.barra-ubicacion {
+    width: 200px;
+    border: none;
+    font-size: 0.4em;
+    background-color: #e7f5db;
+    border-right: 2px #b5c2a9 solid;
+    outline: none;
+}
+
+.boton-buscar {
+    width: 150px;
+    font-size: 0.45em;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+    background-color: #a2d873;
+    color: #003b4e;
+    border: none;
+    cursor: pointer;
+}
+.boton-buscar:hover {
+    transition: .1s;
+    background-color: #76a14f;
+}
