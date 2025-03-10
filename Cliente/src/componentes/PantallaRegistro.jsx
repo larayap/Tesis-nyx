@@ -42,7 +42,7 @@ function PantallaRegistro() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/empresas')
+    fetch('https://tesis-nyx.onrender.com//api/empresas')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -96,7 +96,7 @@ function PantallaRegistro() {
       formData.append('calle_numero', calle_numero);
       formData.append('region', region);
       formData.append('comuna', comuna);
-      const response = await fetch('http://localhost:5000/api/empresaRegistro', {
+      const response = await fetch('https://tesis-nyx.onrender.com//api/empresaRegistro', {
         method: 'POST',
         body: formData,  // Modificado aquí
       });
@@ -163,7 +163,7 @@ function PantallaRegistro() {
           formData2.append('region', region);
           formData2.append('comuna', comuna);
           
-          const response = await fetch('http://localhost:5000/api/estudianteRegistro', {
+          const response = await fetch('https://tesis-nyx.onrender.com//api/estudianteRegistro', {
             method: 'POST',
             body: formData2,  // Modificado aquí
           });

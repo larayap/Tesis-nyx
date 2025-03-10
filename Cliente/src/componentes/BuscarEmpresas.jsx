@@ -117,7 +117,7 @@ function BuscarPractica() {
   useEffect(() => {
     const fetchDepartamentos = async () => {
       try {
-        let url = `http://localhost:5000/api/buscarEmpresas?empresa=${empresa}`;
+        let url = `https://tesis-nyx.onrender.com//api/buscarEmpresas?empresa=${empresa}`;
         if (ordenar) {
           url += `&ordenar=${ordenar}`;
         }

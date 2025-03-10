@@ -90,7 +90,7 @@ function Postulaciones() {
   const fechaFormateada = `${dia} de ${nombreMes} del ${ano}`;
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/empresas')
+    fetch('https://tesis-nyx.onrender.com//api/empresas')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -111,7 +111,7 @@ function Postulaciones() {
         };
         console.log(datosEstudiante);
         // Haciendo petición POST
-        const response = await fetch('http://localhost:5000/api/postulacion/estudiante', {
+        const response = await fetch('https://tesis-nyx.onrender.com//api/postulacion/estudiante', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ function Postulaciones() {
   }, [user]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/ofertas')
+    fetch('https://tesis-nyx.onrender.com//api/ofertas')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -183,11 +183,11 @@ function Postulaciones() {
   const postularOferta = async (e) => {
     e.preventDefault();
     try {
-      const checkResponse = await fetch(`http://localhost:5000/api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
+      const checkResponse = await fetch(`https://tesis-nyx.onrender.com//api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
       const exists = await checkResponse.json();
   
       if (exists.alreadyApplied) {
-        const deleteResponse = await fetch(`http://localhost:5000/api/postulacion/delete/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`, {
+        const deleteResponse = await fetch(`https://tesis-nyx.onrender.com//api/postulacion/delete/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`, {
           method: 'DELETE',
         });
         if (deleteResponse.ok) {
@@ -213,7 +213,7 @@ function Postulaciones() {
           id_estudiante: user.id_estudiante,
           fecha: new Date()
         };
-        const response = await fetch('http://localhost:5000/api/postulacion/agregar', {
+        const response = await fetch('https://tesis-nyx.onrender.com//api/postulacion/agregar', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -244,7 +244,7 @@ function Postulaciones() {
     
     try {
       // Comprobamos si el usuario ya se postuló a la oferta
-      const checkResponse = await fetch(`http://localhost:5000/api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
+      const checkResponse = await fetch(`https://tesis-nyx.onrender.com//api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
       const exists = await checkResponse.json();
       console.log(exists);
       if (exists.alreadyApplied) {

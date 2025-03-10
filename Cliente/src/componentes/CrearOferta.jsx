@@ -22,7 +22,7 @@ function CrearOferta() {
   const [empresa, setEmpresa] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/departamentos')
+    fetch('https://tesis-nyx.onrender.com//api/departamentos')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -68,7 +68,7 @@ function CrearOferta() {
                   region
                 };
                 
-                const response = await fetch('http://localhost:5000/api/ofertas/agregar', {
+                const response = await fetch('https://tesis-nyx.onrender.com//api/ofertas/agregar', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
