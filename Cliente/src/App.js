@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState(null);
   
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/data')
+    fetch('https://tesis-nyx.onrender.com/api/data')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");

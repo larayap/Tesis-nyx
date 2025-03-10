@@ -58,7 +58,7 @@ function Ofertas() {
         rutEstudiante
       };
       
-      const response = await fetch('https://tesis-nyx.onrender.com//api/postulaciones/agregarEstudiante', {
+      const response = await fetch('https://tesis-nyx.onrender.com/api/postulaciones/agregarEstudiante', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ function Ofertas() {
   const fechaFormateada = `Publicado el ${dia} de ${nombreMes} de ${ano}`;
   
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/empresas')
+    fetch('https://tesis-nyx.onrender.com/api/empresas')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");
@@ -158,7 +158,7 @@ function Ofertas() {
       .catch((error) => console.log(error));
   }, []); 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/departamentos')
+    fetch('https://tesis-nyx.onrender.com/api/departamentos')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -173,7 +173,7 @@ function Ofertas() {
 
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/ofertas')
+    fetch('https://tesis-nyx.onrender.com/api/ofertas')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -187,7 +187,7 @@ function Ofertas() {
   }, []);
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/estudiantes')
+    fetch('https://tesis-nyx.onrender.com/api/estudiantes')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -201,7 +201,7 @@ function Ofertas() {
   }, []);
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/postulaciones')
+    fetch('https://tesis-nyx.onrender.com/api/postulaciones')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -252,7 +252,7 @@ function Ofertas() {
       if (result.isConfirmed) {
         // Suponiendo que tienes un endpoint de API para eliminar ofertas
         // y que ofertaFiltrada.id_oferta contiene el ID de la oferta a eliminar.
-        const url = `https://tesis-nyx.onrender.com//api/ofertas/${ofertaFiltrada.id_oferta}`;
+        const url = `https://tesis-nyx.onrender.com/api/ofertas/${ofertaFiltrada.id_oferta}`;
         console.log(url);
         fetch(url, {
           method: 'DELETE',
@@ -306,7 +306,7 @@ function Ofertas() {
       if (result.isConfirmed) {
         // Suponiendo que tienes un endpoint de API para eliminar ofertas
         // y que ofertaFiltrada.id_oferta contiene el ID de la oferta a eliminar.
-        const url = `https://tesis-nyx.onrender.com//api/postulaciones/${postulacionFiltrada.id_postulacion}`;
+        const url = `https://tesis-nyx.onrender.com/api/postulaciones/${postulacionFiltrada.id_postulacion}`;
         console.log(url);
         fetch(url, {
           method: 'DELETE',
@@ -362,7 +362,7 @@ function Ofertas() {
         modalidad
       };
       
-      const response = await fetch('https://tesis-nyx.onrender.com//api/ofertas/modificar', {
+      const response = await fetch('https://tesis-nyx.onrender.com/api/ofertas/modificar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -406,7 +406,7 @@ function Ofertas() {
 
   const actualizarEstadoPostulacion = async (idPostulacion, nuevoEstado) => {
     try {
-      const response = await fetch(`https://tesis-nyx.onrender.com//api/postulaciones/${idPostulacion}`, {
+      const response = await fetch(`https://tesis-nyx.onrender.com/api/postulaciones/${idPostulacion}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -451,7 +451,7 @@ function Ofertas() {
       });
       
       if (resultado.isConfirmed) {
-        const response = await fetch(`https://tesis-nyx.onrender.com//api/ofertas/${idOferta}`, {
+        const response = await fetch(`https://tesis-nyx.onrender.com/api/ofertas/${idOferta}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

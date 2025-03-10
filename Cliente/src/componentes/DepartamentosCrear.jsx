@@ -49,7 +49,7 @@ function DepartamentosCrear() {
         nombreAntiguo: nombreAntiguo
       };
       
-      const response = await fetch(`https://tesis-nyx.onrender.com//api/departamentos/actualizar/${departamentoEditar.id_departamentos}`, {
+      const response = await fetch(`https://tesis-nyx.onrender.com/api/departamentos/actualizar/${departamentoEditar.id_departamentos}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ function DepartamentosCrear() {
     .then(async (willDelete) => {
       if (willDelete) {
         try {
-          const response = await fetch(`https://tesis-nyx.onrender.com//api/departamentos/eliminar/${id}`, {
+          const response = await fetch(`https://tesis-nyx.onrender.com/api/departamentos/eliminar/${id}`, {
             method: 'DELETE',
           });
   
@@ -120,7 +120,7 @@ function DepartamentosCrear() {
   
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com//api/departamentos')
+    fetch('https://tesis-nyx.onrender.com/api/departamentos')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -137,7 +137,7 @@ function DepartamentosCrear() {
     e.preventDefault(); 
     try {
       // Primero, verificar si ya existe un departamento con ese nombre
-      const responseCheck = await fetch(`https://tesis-nyx.onrender.com//api/departamentos/check/${nombre}`);
+      const responseCheck = await fetch(`https://tesis-nyx.onrender.com/api/departamentos/check/${nombre}`);
       const existeDepartamento = await responseCheck.json();
       
       if (existeDepartamento.existe) {
@@ -151,7 +151,7 @@ function DepartamentosCrear() {
         id_empresa: user?.id_empresa
       };
   
-      const response = await fetch('https://tesis-nyx.onrender.com//api/departamentos/agregar', {
+      const response = await fetch('https://tesis-nyx.onrender.com/api/departamentos/agregar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
