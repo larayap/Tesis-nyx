@@ -34,10 +34,11 @@ const transporter = nodemailer.createTransport({
 });
 
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'nyx',
+  host: process.env.HOST,
+  port: process.env.PORT,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
 });
 
 app.get('/api/empresas', (req, res) => {
