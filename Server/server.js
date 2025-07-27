@@ -41,6 +41,15 @@ const db = mysql.createPool({
   database: process.env.DATABASE,
 });
 
+app.get('/test', (req, res) => {
+  console.log('aqaaass')
+  res.send('Corestos prasaocess.env.HOST: ' + process.env.HOST);
+});
+
+app.get('/test2', (req, res) => {
+  res.send('aqui ztasxaasza');
+});
+
 app.get('/api/empresas', (req, res) => {
   db.query('SELECT * FROM empresas', (err, result) => {
     if (err) {
