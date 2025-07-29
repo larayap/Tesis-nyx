@@ -22,7 +22,7 @@ function PantallaSesion() {
     setSelectedButton('estudiante');
   };
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/empresas')
+    fetch('https://api.larayap.com/apiNyx/api/empresas')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -38,7 +38,7 @@ function PantallaSesion() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(isEmpresa){
-      const response = await fetch('https://tesis-nyx.onrender.com/api/autenticarEmpresa', {
+      const response = await fetch('https://api.larayap.com/apiNyx/api/autenticarEmpresa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ function PantallaSesion() {
         swal("Error!", "Usuario o contraseña incorrectos", "error");
       }
     } else {
-      const response = await fetch('https://tesis-nyx.onrender.com/api/autenticarEstudiante', {
+      const response = await fetch('https://api.larayap.com/apiNyx/api/autenticarEstudiante', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -28,7 +28,7 @@ function PerfilEstudiante() {
   }, []);
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/estudiantes')
+    fetch('https://api.larayap.com/apiNyx/api/estudiantes')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");

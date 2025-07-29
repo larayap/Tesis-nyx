@@ -20,7 +20,7 @@ function EmpresasMod() {
   const [numero, setNumero] = useState('');
   
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/empresas')
+    fetch('https://api.larayap.com/apiNyx/api/empresas')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
@@ -51,7 +51,7 @@ function EmpresasMod() {
         numero,
       };
       
-      const response = await fetch('https://tesis-nyx.onrender.com/api/usuarios/modificar', {
+      const response = await fetch('https://api.larayap.com/apiNyx/api/usuarios/modificar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

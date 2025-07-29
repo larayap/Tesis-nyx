@@ -117,7 +117,7 @@ function BuscarPractica() {
   useEffect(() => {
     const fetchDepartamentos = async () => {
       try {
-        let url = `https://tesis-nyx.onrender.com/api/buscarEmpresas?empresa=${empresa}`;
+        let url = `https://api.larayap.com/apiNyx/api/buscarEmpresas?empresa=${empresa}`;
         if (ordenar) {
           url += `&ordenar=${ordenar}`;
         }

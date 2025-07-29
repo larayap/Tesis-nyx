@@ -94,11 +94,11 @@ function PerfilEmpresa() {
   const postularOferta = async (e) => {
     e.preventDefault();
     try {
-      const checkResponse = await fetch(`https://tesis-nyx.onrender.com/api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
+      const checkResponse = await fetch(`https://api.larayap.com/apiNyx/api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
       const exists = await checkResponse.json();
   
       if (exists.alreadyApplied) {
-        const deleteResponse = await fetch(`https://tesis-nyx.onrender.com/api/postulacion/delete/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`, {
+        const deleteResponse = await fetch(`https://api.larayap.com/apiNyx/api/postulacion/delete/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`, {
           method: 'DELETE',
         });
         if (deleteResponse.ok) {
@@ -126,7 +126,7 @@ function PerfilEmpresa() {
           id_estudiante: user.id_estudiante,
           fecha: new Date()
         };
-        const response = await fetch('https://tesis-nyx.onrender.com/api/postulacion/agregar', {
+        const response = await fetch('https://api.larayap.com/apiNyx/api/postulacion/agregar', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ function PerfilEmpresa() {
   };
   const verificarPostulacionAceptada = async () => {
     try {
-      const response = await fetch(`https://tesis-nyx.onrender.com/api/postulacion/verificar/${user.id_estudiante}/${idEmpresa}`);
+      const response = await fetch(`https://api.larayap.com/apiNyx/api/postulacion/verificar/${user.id_estudiante}/${idEmpresa}`);
       const data = await response.json();
       return data.tienePostulacionAceptada;
     } catch (error) {
@@ -180,7 +180,7 @@ function PerfilEmpresa() {
       return;
     }
       try {
-        const checkResponse = await fetch(`https://tesis-nyx.onrender.com/api/comentarios/check/${user.id_estudiante}`);
+        const checkResponse = await fetch(`https://api.larayap.com/apiNyx/api/comentarios/check/${user.id_estudiante}`);
         const exists = await checkResponse.json();
           if(rating !== 0){
           if (!exists.alreadyApplied) {
@@ -190,7 +190,7 @@ function PerfilEmpresa() {
               rating: rating,
               comentario: comentario,
             };
-            const agregarResponse = await fetch('https://tesis-nyx.onrender.com/api/comentarios/agregar', {
+            const agregarResponse = await fetch('https://api.larayap.com/apiNyx/api/comentarios/agregar', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -276,7 +276,7 @@ function PerfilEmpresa() {
   };
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/empresas')
+    fetch('https://api.larayap.com/apiNyx/api/empresas')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");
@@ -290,7 +290,7 @@ function PerfilEmpresa() {
   }, []); 
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/ofertas')
+    fetch('https://api.larayap.com/apiNyx/api/ofertas')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");
@@ -304,7 +304,7 @@ function PerfilEmpresa() {
   }, []); 
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/departamentos')
+    fetch('https://api.larayap.com/apiNyx/api/departamentos')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");
@@ -318,7 +318,7 @@ function PerfilEmpresa() {
   }, []); 
 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/feedbacks')
+    fetch('https://api.larayap.com/apiNyx/api/feedbacks')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");
@@ -332,7 +332,7 @@ function PerfilEmpresa() {
       .catch((error) => console.log(error));
   }, []); 
   useEffect(() => {
-    fetch('https://tesis-nyx.onrender.com/api/estudiantes')
+    fetch('https://api.larayap.com/apiNyx/api/estudiantes')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al cargar los datos");
@@ -405,7 +405,7 @@ const [puntuacionEmpresa, setPuntuacionEmpresa] = useState(0);
     
     try {
       // Comprobamos si el usuario ya se postuló a la oferta
-      const checkResponse = await fetch(`https://tesis-nyx.onrender.com/api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
+      const checkResponse = await fetch(`https://api.larayap.com/apiNyx/api/postulacion/check/${ofertaSeleccionada.id_oferta}/${user.id_estudiante}`);
       const exists = await checkResponse.json();
       console.log(exists);
       if (exists.alreadyApplied) {
@@ -439,7 +439,7 @@ const [puntuacionEmpresa, setPuntuacionEmpresa] = useState(0);
   }
   const realizarBorrado = async (idComentario) => {
     try {
-      const response = await fetch(`https://tesis-nyx.onrender.com/api/comentarios/borrar/${idComentario}/${idEmpresa}`, {
+      const response = await fetch(`https://api.larayap.com/apiNyx/api/comentarios/borrar/${idComentario}/${idEmpresa}`, {
         method: 'DELETE',
       });
 

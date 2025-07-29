@@ -52,7 +52,7 @@ function EstudiantesMod() {
         comuna
       };
       
-      const response = await fetch('https://tesis-nyx.onrender.com/api/estudiantes/modificar', {
+      const response = await fetch('https://api.larayap.com/apiNyx/api/estudiantes/modificar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

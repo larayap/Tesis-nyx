@@ -56,7 +56,7 @@ function BuscarPractica() {
   useEffect(() => {
     const fetchEstudiantes = async () => {
       try {
-        let url = `https://tesis-nyx.onrender.com/api/buscarEstudiantes?estudiante=${estudiante}`;
+        let url = `https://api.larayap.com/apiNyx/api/buscarEstudiantes?estudiante=${estudiante}`;
         console.log(estudiante);
         const response = await fetch(url);
         if (!response.ok) {
