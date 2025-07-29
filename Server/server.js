@@ -43,11 +43,11 @@ const db = mysql.createPool({
 
 app.get('/test', (req, res) => {
   console.log('aqaaass')
-  res.send('Corestos prasaocess.env.HOST: ' + process.env.HOST);
+  res.send('Working :)');
 });
 
 app.get('/test2', (req, res) => {
-  res.send('aqui ztasxaasza');
+  res.send('More working :D');
 });
 
 app.get('/api/empresas', (req, res) => {
